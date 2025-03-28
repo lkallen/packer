@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import EditItem from "./EditItem";
 import DeleteButton from "./DeleteButton";
 
 export default function AdminTable({ tag, allItems }) {
@@ -13,11 +12,9 @@ export default function AdminTable({ tag, allItems }) {
     <tr key={item.id}>
       <td>{item.item}</td>
       <td>{item.tags}</td>
+      <td>edit</td>
       <td>
-        <EditItem />
-      </td>
-      <td>
-        <DeleteButton />
+        <DeleteButton item={item} />
       </td>
     </tr>
   ));

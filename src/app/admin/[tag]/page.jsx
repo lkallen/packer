@@ -1,4 +1,5 @@
 import { getAllItems } from "@/actions/actions";
+import AddModal from "@/components/AddModal";
 import AdminTable from "@/components/AdminTable";
 
 export default async function AdminTableByTag({ params }) {
@@ -7,6 +8,9 @@ export default async function AdminTableByTag({ params }) {
 
   return (
     <div>
+      <div>
+        <AddModal tag={tag} />
+      </div>
       <AdminTable tag={tag} allItems={allItems} />
     </div>
   );

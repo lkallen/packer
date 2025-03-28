@@ -1,4 +1,3 @@
-import AddItem from "@/components/AddItem";
 import AdminTabs from "@/components/AdminTabs";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
@@ -13,12 +12,7 @@ export default function UserLayout({ children }) {
 
       <div className="border border-red-400 ">
         <AdminTabs />
-        
       </div>
-
-
-<AddItem />
-
 
       <div className="border">{children}</div>
 

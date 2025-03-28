@@ -30,7 +30,7 @@ export async function addItem(itemData) {
     .values({
         id: id,
         item: item,
-        tags: tag,
+        tags: tags,
     })
     revalidatePath('/admin')
 }
