@@ -1,39 +1,33 @@
-export default function Table() {
+"use client";
+
+import { useState } from "react";
+
+export default function Table({ tag, allItems }) {
+  const [filteredItems, setFilteredItems] = useState([]);
+
+  const filteredData = allItems.filter((item) => item.tags.includes(tag));
+
+  const tableRows = filteredData.map((item) => (
+    <tr key={item.id}>
+      <td>{item.item}</td>
+      <td>toggle</td>
+    </tr>
+  ));
+
+  const firstLetter = tag.charAt(0).toUpperCase();
+  const remainingLetters = tag.slice(1);
+  const editedTag = firstLetter + remainingLetters;
+
   return (
     <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
       <table className="table">
-        {/* head */}
         <thead>
           <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
+            <th>{editedTag}</th>
+            <th>Packed</th>
           </tr>
         </thead>
-        <tbody>
-          {/* row 1 */}
-          <tr>
-            <th>1</th>
-            <td>Cy Ganderton</td>
-            <td>Quality Control Specialist</td>
-            <td>Blue</td>
-          </tr>
-          {/* row 2 */}
-          <tr>
-            <th>2</th>
-            <td>Hart Hagerty</td>
-            <td>Desktop Support Technician</td>
-            <td>Purple</td>
-          </tr>
-          {/* row 3 */}
-          <tr>
-            <th>3</th>
-            <td>Brice Swyre</td>
-            <td>Tax Accountant</td>
-            <td>Red</td>
-          </tr>
-        </tbody>
+        <tbody>{tableRows}</tbody>
       </table>
     </div>
   );
