@@ -1,7 +1,7 @@
+import AddModal from "@/components/AddModal";
 import AdminTabs from "@/components/AdminTabs";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
-import SideNav from "@/components/SideNav";
 
 export default function UserLayout({ children }) {
   return (
@@ -12,6 +12,11 @@ export default function UserLayout({ children }) {
 
       <div className="border border-red-400 ">
         <AdminTabs />
+      </div>
+
+      <div>
+        <AddModal />
+        
       </div>
 
       <div className="border">{children}</div>

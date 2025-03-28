@@ -8,9 +8,9 @@ export default async function AdminTableByTag({ params }) {
 
   return (
     <div>
-      <div>
+      {/* <div>
         <AddModal tag={tag} />
-      </div>
+      </div> */}
       <AdminTable tag={tag} allItems={allItems} />
     </div>
   );

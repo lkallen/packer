@@ -1,10 +1,14 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 import { addItem } from "@/actions/actions";
 import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { useState } from "react";
 
 export default function AddModal({ tag }) {
+  const router = useRouter();
+
   const [isOpen, setIsOpen] = useState(false);
   const [itemData, setItemData] = useState({});
 
@@ -17,20 +21,43 @@ export default function AddModal({ tag }) {
     });
   }
 
-  // incoming tag param can be used to set default
-  // or jsut have dropdown options to change
+  const tags = [
+    "clothing",
+    "toiletries",
+    "medications",
+    "electronics",
+    "critical",
+    "miscellaneous",
+  ];
 
-  function handleTagChange(event) {
+  const optionsElements = tags.map((tag) => (
+    <option key={tag} value={tag}>
+      {tag}
+    </option>
+  ));
+
+  function handleTagChange(value) {
+    // console.log(value)
     setItemData((prev) => {
       return {
         ...prev,
-        tags: event.target.value,
+        tags: value,
       };
     });
   }
 
+  // function handleTagChange(event) {
+  //   setItemData((prev) => {
+  //     return {
+  //       ...prev,
+  //       tags: event.target.value,
+  //     };
+  //   });
+  // }
+
   function handleSubmit() {
     addItem(itemData);
+    router.refresh();
   }
 
   return (
@@ -61,7 +88,7 @@ export default function AddModal({ tag }) {
                 />
               </div>
 
-              <div>
+              {/* <div>
                 <label htmlFor="tags">Category:</label>
                 <input
                   className="input input-primary"
@@ -70,6 +97,18 @@ export default function AddModal({ tag }) {
                   placeholder="enter category"
                   onChange={handleTagChange}
                 />
+              </div> */}
+
+              <div>
+                <label htmlFor="tags">Category:</label>
+                <select
+                  defaultValue="Select Category"
+                  className="select"
+                  onChange={(event) => handleTagChange(event.target.value)}
+                >
+                  <option disabled={true}>Select Category</option>
+                  {optionsElements}
+                </select>
               </div>
 
               <div className="flex justify-center gap-4">
