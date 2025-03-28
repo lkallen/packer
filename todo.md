@@ -1,0 +1,4 @@
+- list all
+- protect routes
+- CRUD stuff
+- toggle button

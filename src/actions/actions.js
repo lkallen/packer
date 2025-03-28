@@ -20,3 +20,34 @@ export async function getItemsByTag(tag) {
     .where(eq(items.tags, tag))
     return data
 }
+
+export async function addItem(itemData) {
+    const id = uuid4()
+    const item = itemData.item
+    const tags = itemData.tags
+    await db
+    .insert(items)
+    .values({
+        id: id,
+        item: item,
+        tags: tag,
+    })
+    revalidatePath('/admin')
+}
+
+export async function deleteItem(item) {
+    const id = item.id
+    await db.delete(items).where(eq(items.id, id))
+    revalidatePath('/admin')
+}
+
+export async function editItem(item) {
+    const id = item.id
+    await db
+    .update(items)
+    .set({
+        item: item.item,
+    })
+    .where(eq(items.id, id))
+    revalidatePath('/admin')
+}
