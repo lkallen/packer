@@ -1,12 +1,3 @@
-import {
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-  SignOutButton,
-} from "@clerk/nextjs";
-
 import Link from "next/link";
 
 export default function NavBar() {
@@ -45,9 +36,7 @@ export default function NavBar() {
                 <Link href="/admin">Mangage Items</Link>
               </li>
 
-              <li>
-                <SignOutButton />
-              </li>
+              <li>sign out</li>
             </ul>
           </div>
 
@@ -64,9 +53,7 @@ export default function NavBar() {
               <Link href="/admin">Mangage Items</Link>
             </li>
 
-            <li>
-              <SignOutButton />
-            </li>
+            <li>sign out </li>
           </ul>
         </div>
       </div>
