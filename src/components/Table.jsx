@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Toggle from "./Toggle";
 
 export default function Table({ tag, allItems }) {
   const [filteredItems, setFilteredItems] = useState([]);
@@ -10,7 +11,7 @@ export default function Table({ tag, allItems }) {
   const tableRows = filteredData.map((item) => (
     <tr key={item.id}>
       <td>{item.item}</td>
-      <td>toggle</td>
+      <td><Toggle item={item} /></td>
     </tr>
   ));
 

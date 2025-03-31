@@ -68,7 +68,7 @@ export default function AddModal({ tag }) {
 
       <Dialog open={isOpen} onClose={() => ""} className="relative z-50">
         <div className="fixed inset-0 flex w-screen items-center justify-center">
-          <DialogPanel className="max-w-lg border  rounded-lg p-4">
+          <DialogPanel className="bg-base-100 max-w-lg border  rounded-lg p-4">
             <DialogTitle className="p-2 justify-self-center">
               <div>Add New Item</div>
             </DialogTitle>

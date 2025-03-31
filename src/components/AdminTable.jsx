@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import DeleteButton from "./DeleteButton";
+import EditModal from "./EditModal";
 
 export default function AdminTable({ tag, allItems }) {
   const [filteredItems, setFilteredItems] = useState([]);
@@ -12,7 +13,7 @@ export default function AdminTable({ tag, allItems }) {
     <tr key={item.id}>
       <td>{item.item}</td>
       <td>{item.tags}</td>
-      <td>edit</td>
+      <td><EditModal item={item}/></td>
       <td>
         <DeleteButton item={item} />
       </td>

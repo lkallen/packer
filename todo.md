@@ -1,8 +1,29 @@
-- list all
-- protect routes
-- CRUD stuff
-- toggle button
 
-- tag selection choices vs free type
-- allow multiple adds wihtout closing modal??
-- edit option
+- landing page
+
+- remove next logo at bottom left - is it just for dev?
+
+- add sign in button on main page
+- default pop for guest login
+- way for guests to only add/edit/delete no protected items
+  - maybe make a category for guest items?
+
+- extras:
+  - add edit tag
+  - add mutliple items without closing modal
+  - list all on admin crud
+  - fancier toggle color change etc if checked: ex.
+    <input type="checkbox" defaultChecked className="toggle border-indigo-600 bg-indigo-500 checked:bg-orange-400 checked:text-orange-800 checked:border-orange-500 " />
+
+
+
+      <SignedOut>
+              <SignInButton />
+              <SignUpButton />
+            </SignedOut>
+
+            <SignedIn>
+              <div>image</div>
+
+              <SignOutButton />
+            </SignedIn>

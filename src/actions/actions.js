@@ -52,3 +52,13 @@ export async function editItem(item) {
     .where(eq(items.id, id))
     revalidatePath('/admin')
 }
+
+export async function toggleDone(item) {
+    const id = item.id
+    await db
+    .update(items)
+    .set({
+        done: not(items.done),
+    })
+    .where(eq(items.id, id))
+}
