@@ -35,12 +35,12 @@ export default function NavBar() {
               <li>
                 <Link href="/admin">Mangage Items</Link>
               </li>
-
-              <li>sign out</li>
             </ul>
           </div>
 
-          <div className="text-xl">AppName</div>
+          <div className="text-xl">
+            <Link href="/">AppName</Link>
+          </div>
         </div>
 
         <div className="navbar-end hidden md:flex">
@@ -52,8 +52,6 @@ export default function NavBar() {
             <li>
               <Link href="/admin">Mangage Items</Link>
             </li>
-
-            <li>sign out </li>
           </ul>
         </div>
       </div>

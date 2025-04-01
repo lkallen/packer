@@ -27,3 +27,25 @@
 
               <SignOutButton />
             </SignedIn>
+
+
+'tick it, zip it, trip it'
+'check off, take off'
+'pack it, track it'
+'from list to luggage'
+
+'packing for travel just got easier'
+'pack it, track it, trip it'
+
+
+'packing made simple, travel made smooth'
+'your checklist for stress-free packing'
+
+'stress-free packing starts here'
+steps: 'pack it, track it, trip it'
+or 'tick it, zip it, trip it'
+
+
+names:
+'packer hacker'
+'packer tracker'
