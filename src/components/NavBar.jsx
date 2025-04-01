@@ -38,7 +38,9 @@ export default function NavBar() {
             </ul>
           </div>
 
-          <div className="text-xl">AppName</div>
+          <div className="text-xl">
+            <Link href="/">AppName</Link>
+          </div>
         </div>
 
         <div className="navbar-end hidden md:flex">
