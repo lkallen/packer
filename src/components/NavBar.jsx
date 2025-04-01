@@ -35,8 +35,6 @@ export default function NavBar() {
               <li>
                 <Link href="/admin">Mangage Items</Link>
               </li>
-
-              <li>sign out</li>
             </ul>
           </div>
 
@@ -52,8 +50,6 @@ export default function NavBar() {
             <li>
               <Link href="/admin">Mangage Items</Link>
             </li>
-
-            <li>sign out </li>
           </ul>
         </div>
       </div>
