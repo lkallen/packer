@@ -1,11 +1,38 @@
 import Link from "next/link";
 
+import { BsSuitcase2 } from "react-icons/bs";
+import { BsLuggage } from "react-icons/bs";
+
+{
+  /* <BsSuitcase2 /> */
+}
+{
+  /* <BsLuggage /> */
+}
+
 export default function NavBar() {
   return (
     <>
       <div className="navbar bg-base-100 shadow-sm">
         <div className="navbar-start">
-          <div className="dropdown">
+          {/* NAVBAR */}
+          <div>
+            <Link href="/">
+              <div className="flex items-center gap-2">
+                <div className="text-4xl">
+                  <BsLuggage />
+                </div>
+                <div className="">
+                  <div>Packer</div>
+                  Hacker
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        <div className="navbar-end">
+          <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -31,15 +58,10 @@ export default function NavBar() {
               <li>
                 <Link href="/user">Packing App</Link>
               </li>
-
               <li>
-                <Link href="/admin">Mangage Items</Link>
+                <Link href="/admin">Mangage Lists</Link>
               </li>
             </ul>
-          </div>
-
-          <div className="text-xl">
-            <Link href="/">AppName</Link>
           </div>
         </div>
 
@@ -50,7 +72,7 @@ export default function NavBar() {
             </li>
 
             <li>
-              <Link href="/admin">Mangage Items</Link>
+              <Link href="/admin">Mangage Lists</Link>
             </li>
           </ul>
         </div>
