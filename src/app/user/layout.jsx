@@ -4,14 +4,17 @@ import SideNav from "@/components/SideNav";
 
 export default function UserLayout({ children }) {
   return (
-    <div className="border h-screen flex-col">
-      <div>
+    <div className=" h-screen flex-col">
+      <div className="border-b border-info pb-2 mb-2">
         <NavBar />
       </div>
 
-      <div className=" flex w-screen border border-red-400 h-full fixed">
+      <div className=" flex w-screen  h-full fixed">
+        <div className=" ">
         <SideNav />
-        <div className="border w-full overflow-scroll">{children}</div>
+        </div>
+      
+        <div className="m-12 w-full overflow-scroll ">{children}</div>
       </div>
 
       <div className="">

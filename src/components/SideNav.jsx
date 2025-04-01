@@ -21,10 +21,14 @@ export default function SideNav() {
     const editedTag = firstLetter + remainingLetters;
 
     return (
-      <li key={tag}>
+      <li key={tag} className="mb-1">
         <Link
           href={`/user/${tag}`}
-          className={`${pathname === `/user/${tag}` ? "menu-active" : ""}`}
+          className={`${
+            pathname === `/user/${tag}`
+              ? "btn btn-outline btn-info text-accent"
+              : "btn btn-soft btn-accent text-white "
+          }`}
         >
           {editedTag}
         </Link>
@@ -34,7 +38,7 @@ export default function SideNav() {
 
   return (
     <>
-      <ul className="menu bg-base-200 w-56">{tabsElements}</ul>
+      <ul className="menu  w-56">{tabsElements}</ul>
     </>
   );
 }
