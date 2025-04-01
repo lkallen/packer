@@ -8,6 +8,8 @@
 - way for guests to only add/edit/delete no protected items
   - maybe make a category for guest items?
 
+  - add back to main user landing on side nav bar
+
 - extras:
   - add edit tag
   - add mutliple items without closing modal

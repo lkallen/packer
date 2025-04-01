@@ -1,9 +1,20 @@
+
+
 import Table from "@/components/Table";
+import UserHero from "@/components/UserHero";
+import UserSteps from "@/components/UserSteps";
 
 export default function UserPage() {
   return (
     <>
-      <div>user page</div>
+      <div className="">
+        <UserHero />
+      </div>
+      <div className="border border-yellow-400">
+        <UserSteps />
+      </div>
+
+ 
     </>
   );
 }
