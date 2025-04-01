@@ -1,28 +1,24 @@
-import Link from "next/link";
+"use client";
 
-import { BsSuitcase2 } from "react-icons/bs";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import { BsLuggage } from "react-icons/bs";
 
-{
-  /* <BsSuitcase2 /> */
-}
-{
-  /* <BsLuggage /> */
-}
-
 export default function NavBar() {
+  const pathname = usePathname();
   return (
     <>
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar shadow-sm">
         <div className="navbar-start">
           {/* NAVBAR */}
           <div>
             <Link href="/">
-              <div className="flex items-center gap-2">
-                <div className="text-4xl">
+              <div className="flex items-center gap-2  font-bold ">
+                <div className="text-4xl ml-2 text-info">
                   <BsLuggage />
                 </div>
-                <div className="">
+                <div className="text-accent">
                   <div>Packer</div>
                   Hacker
                 </div>
@@ -53,7 +49,7 @@ export default function NavBar() {
 
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu bg-base-200  menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
                 <Link href="/user">Packing App</Link>
@@ -68,11 +64,29 @@ export default function NavBar() {
         <div className="navbar-end hidden md:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link href="/user">Packing App</Link>
+              <Link
+                href="/user"
+                className={`${
+                  pathname.includes("/user")
+                    ? "btn btn-outline btn-accent"
+                    : "btn btn-soft btn-accent text-white"
+                }`}
+              >
+                Packing App
+              </Link>
             </li>
 
             <li>
-              <Link href="/admin">Mangage Lists</Link>
+              <Link
+                href="/admin"
+                className={`${
+                  pathname.includes("/admin")
+                    ? "btn btn-outline btn-accent"
+                    : "btn btn-soft btn-accent text-white"
+                }`}
+              >
+                Mangage Lists
+              </Link>
             </li>
           </ul>
         </div>

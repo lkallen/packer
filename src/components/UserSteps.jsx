@@ -9,8 +9,8 @@ export default function UserSteps() {
       {/* <IoMdCheckboxOutline /> */}
       {/* <FaPersonWalkingLuggage /> */}
 
-      <div className="flex border rounded-md my-8">
-        <div className="text-7xl p-4">
+      <div className="flex border border-info rounded-md my-8">
+        <div className="text-7xl p-4 text-accent">
           <LuClipboardList />
         </div>
         <div className="w-full flex-col content-center  ">
@@ -21,8 +21,8 @@ export default function UserSteps() {
         </div>
       </div>
 
-      <div className="flex border rounded-md  my-8">
-        <div className="text-7xl p-4">
+      <div className="flex border rounded-md border-info my-8">
+        <div className="text-7xl text-accent p-4">
           <IoMdCheckboxOutline />
         </div>
         <div className="w-full flex-col content-center  ">
@@ -33,8 +33,8 @@ export default function UserSteps() {
         </div>
       </div>
 
-      <div className="flex border rounded-md my-8">
-        <div className="text-7xl p-4">
+      <div className="flex border border-info rounded-md my-8">
+        <div className="text-7xl text-accent p-4">
           <FaPersonWalkingLuggage />
         </div>
         <div className=" w-full flex-col content-center  ">

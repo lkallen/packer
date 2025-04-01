@@ -10,7 +10,7 @@ export default function UserPage() {
       <div className="">
         <UserHero />
       </div>
-      <div className="border border-yellow-400">
+      <div className="">
         <UserSteps />
       </div>
 

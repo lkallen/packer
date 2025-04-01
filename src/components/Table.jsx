@@ -20,12 +20,12 @@ export default function Table({ tag, allItems }) {
   const editedTag = firstLetter + remainingLetters;
 
   return (
-    <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
+    <div className="overflow-x-auto rounded-box border border-info  bg-base-100">
       <table className="table">
         <thead>
           <tr>
-            <th>{editedTag}</th>
-            <th>Packed</th>
+            <th className="text-accent">{editedTag}</th>
+            <th className="text-accent">Packed</th>
           </tr>
         </thead>
         <tbody>{tableRows}</tbody>
