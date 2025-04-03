@@ -9,16 +9,17 @@ export default function NavBar() {
   const pathname = usePathname();
   return (
     <>
-      <div className="navbar shadow-sm">
+    <div className="border-b border-info pb-2 mb-2">
+      <div className="navbar shadow-sm ">
         <div className="navbar-start">
           {/* NAVBAR */}
           <div>
             <Link href="/">
               <div className="flex items-center gap-2  font-bold ">
-                <div className="text-4xl ml-2 text-info">
+                <div className="text-4xl ml-2 text-white">
                   <BsLuggage />
                 </div>
-                <div className="text-accent">
+                <div className="text-white">
                   <div>Packer</div>
                   Hacker
                 </div>
@@ -90,6 +91,7 @@ export default function NavBar() {
             </li>
           </ul>
         </div>
+      </div>
       </div>
     </>
   );

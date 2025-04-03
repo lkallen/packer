@@ -20,20 +20,20 @@ export default function AdminTabs() {
     const editedTag = firstLetter + remainingLetters;
 
     return (
-      <Link
-        key={tag}
-        href={`/admin/${tag}`}
-        role="tab"
-        className={`${pathname === `/admin/${tag}` ? "tab tab-active" : "tab"}`}
-      >
-        {editedTag}
-      </Link>
+      <li key={tag} className="mb-1">
+        <Link
+          href={`/admin/${tag}`}
+          className={`${
+            pathname === `/admin/${tag}`
+              ? "btn btn-outline btn-info text-accent"
+              : "btn btn-soft btn-accent text-white "
+          }`}
+        >
+          {editedTag}
+        </Link>
+      </li>
     );
   });
 
-  return (
-    <div role="tablist" className="tabs tabs-lift">
-      {tabsElements}
-    </div>
-  );
+  return <ul className="menu w-56">{tabsElements}</ul>;
 }
