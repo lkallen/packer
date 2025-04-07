@@ -10,7 +10,9 @@ export default function AddModal({ tag }) {
   const router = useRouter();
 
   const [isOpen, setIsOpen] = useState(false);
-  const [itemData, setItemData] = useState({});
+  const [itemData, setItemData] = useState({
+    tags: "clothing",
+  });
 
   function handleItemChange(event) {
     setItemData((prev) => {
@@ -60,8 +62,8 @@ export default function AddModal({ tag }) {
       </button>
 
       <Dialog open={isOpen} onClose={() => ""} className="relative z-50">
-        <div className="fixed  inset-0 flex mt-20 self-start  justify-center ">
-          <DialogPanel className="bg-base-100 border border-accent rounded-lg p-20 justify-self-center  mt-10">
+        <div className="fixed inset-0 flex w-screen items-center justify-center">
+          <DialogPanel className="bg-base-100 max-w-lg border border-info p-6 rounded-lg p-4">
             <DialogTitle className="p-2 justify-self-center">
               <div className="text-xl">Add New Item</div>
             </DialogTitle>
@@ -72,6 +74,7 @@ export default function AddModal({ tag }) {
 
                 <input
                   className="input input-info"
+                  required
                   type="text"
                   name="item"
                   placeholder="enter item"
@@ -82,7 +85,7 @@ export default function AddModal({ tag }) {
               <div className="mt-4">
                 <label htmlFor="tags">Category:</label>
                 <select
-                  defaultValue="Select Category"
+                  defaultValue="clothing"
                   className="select border border-info"
                   onChange={(event) => handleTagChange(event.target.value)}
                 >

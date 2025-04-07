@@ -9,3 +9,12 @@
   - maybe make a category for guest items?
 
 - only show arrow when need to scroll??
+
+
+
+validate add:
+ensure not empty
+require tag select
+
+
+- on add modal - make consistent with required alert for edit item
