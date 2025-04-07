@@ -1,6 +1,3 @@
-
-
-import Table from "@/components/Table";
 import UserHero from "@/components/UserHero";
 import UserSteps from "@/components/UserSteps";
 
@@ -13,8 +10,6 @@ export default function UserPage() {
       <div className="">
         <UserSteps />
       </div>
-
- 
     </>
   );
 }

@@ -35,7 +35,7 @@ export default function EditModal({ item }) {
 
         <Dialog open={isOpen} onClose={() => ""} className="relative z-50">
           <div className="fixed inset-0 flex w-screen items-center justify-center">
-            <DialogPanel className="bg-base-100 max-w-lg border  rounded-lg p-4">
+            <DialogPanel className="bg-base-100 max-w-lg border border-info p-6 rounded-lg p-4">
               <DialogTitle className="p-2 justify-self-center">
                 <div>Edit Item</div>
               </DialogTitle>
@@ -47,7 +47,7 @@ export default function EditModal({ item }) {
                   <label htmlFor="item">Edit Item:</label>
 
                   <input
-                    className="input input-primary"
+                    className="input input-accent"
                     type="text"
                     name="item"
                     value={itemObject.item}
@@ -55,9 +55,9 @@ export default function EditModal({ item }) {
                   />
                 </div>
 
-                <div className="flex justify-center gap-4">
+                <div className="flex justify-center gap-4 mt-4">
                   <button
-                    className="btn"
+                    className="btn btn-soft btn-info text-white"
                     onClick={() => {
                       editItem(itemObject);
                       setIsOpen(false);
@@ -65,7 +65,10 @@ export default function EditModal({ item }) {
                   >
                     Submit
                   </button>
-                  <button className="btn" onClick={() => setIsOpen(false)}>
+                  <button
+                    className="btn btn-soft btn-accent text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
                     Cancel
                   </button>
                 </div>
