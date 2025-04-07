@@ -1,6 +1,3 @@
-- reset all to unpacked option
-
-- add modal
 - main admin landing
 - don't allow empty input - for add and edit
 
@@ -11,9 +8,7 @@
   - way for guests to only add/edit/delete no protected items
   - maybe make a category for guest items?
 
-  - styling:
-  - modal input colors
-  - add modal
+- edit modal styling
 
 - only show arrow when need to scroll??
 
