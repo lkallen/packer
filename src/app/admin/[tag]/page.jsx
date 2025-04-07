@@ -11,6 +11,7 @@ export default async function AdminTableByTag({ params }) {
       {/* <div>
         <AddModal tag={tag} />
       </div> */}
+      
       <AdminTable tag={tag} allItems={allItems} />
     </div>
   );

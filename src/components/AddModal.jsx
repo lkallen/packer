@@ -37,7 +37,6 @@ export default function AddModal({ tag }) {
   ));
 
   function handleTagChange(value) {
-    // console.log(value)
     setItemData((prev) => {
       return {
         ...prev,
@@ -46,15 +45,6 @@ export default function AddModal({ tag }) {
     });
   }
 
-  // function handleTagChange(event) {
-  //   setItemData((prev) => {
-  //     return {
-  //       ...prev,
-  //       tags: event.target.value,
-  //     };
-  //   });
-  // }
-
   function handleSubmit() {
     addItem(itemData);
     router.refresh();
@@ -62,25 +52,26 @@ export default function AddModal({ tag }) {
 
   return (
     <div>
-      <button onClick={() => setIsOpen(true)} className="btn">
+      <button
+        onClick={() => setIsOpen(true)}
+        className="btn btn-sm btn-soft btn-accent text-white"
+      >
         Add Item
       </button>
 
       <Dialog open={isOpen} onClose={() => ""} className="relative z-50">
-        <div className="fixed inset-0 flex w-screen items-center justify-center">
-          <DialogPanel className="bg-base-100 max-w-lg border  rounded-lg p-4">
+        <div className="fixed  inset-0 flex mt-20 self-start  justify-center ">
+          <DialogPanel className="bg-base-100 border border-accent rounded-lg p-20 justify-self-center  mt-10">
             <DialogTitle className="p-2 justify-self-center">
-              <div>Add New Item</div>
+              <div className="text-xl">Add New Item</div>
             </DialogTitle>
 
             <form>
-              <div
-              // className="p-2"
-              >
+              <div>
                 <label htmlFor="item">Item:</label>
 
                 <input
-                  className="input input-primary"
+                  className="input input-info"
                   type="text"
                   name="item"
                   placeholder="enter item"
@@ -88,22 +79,11 @@ export default function AddModal({ tag }) {
                 />
               </div>
 
-              {/* <div>
-                <label htmlFor="tags">Category:</label>
-                <input
-                  className="input input-primary"
-                  type="text"
-                  name="tags"
-                  placeholder="enter category"
-                  onChange={handleTagChange}
-                />
-              </div> */}
-
-              <div>
+              <div className="mt-4">
                 <label htmlFor="tags">Category:</label>
                 <select
                   defaultValue="Select Category"
-                  className="select"
+                  className="select border border-info"
                   onChange={(event) => handleTagChange(event.target.value)}
                 >
                   <option disabled={true}>Select Category</option>
@@ -111,11 +91,17 @@ export default function AddModal({ tag }) {
                 </select>
               </div>
 
-              <div className="flex justify-center gap-4">
-                <button className="btn" onClick={() => handleSubmit()}>
+              <div className="flex justify-center gap-4 mt-4">
+                <button
+                  className="btn btn-soft btn-info text-white"
+                  onClick={() => handleSubmit()}
+                >
                   Submit
                 </button>
-                <button className="btn" onClick={() => setIsOpen(false)}>
+                <button
+                  className="btn btn-soft btn-accent text-white"
+                  onClick={() => setIsOpen(false)}
+                >
                   Cancel
                 </button>
               </div>
