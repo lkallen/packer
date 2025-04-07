@@ -3,8 +3,10 @@ import { editItem } from "@/actions/actions";
 import { useRouter } from "next/navigation";
 import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { useState } from "react";
+import ErrorMessage from "./ErrorMessage";
 
 export default function EditModal({ item }) {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
   const [itemObject, setItemObject] = useState({
@@ -19,6 +21,29 @@ export default function EditModal({ item }) {
         item: event.target.value,
       };
     });
+  }
+
+  const [isError, setIsError] = useState(false);
+
+  function handleConfirm() {
+    if (itemObject.item === "") {
+      setIsError(true);
+      return;
+    } else {
+      setIsError(false);
+      editItem(itemObject);
+      setIsOpen(false);
+    }
+  }
+
+  function handleCancel() {
+    setIsError(false);
+    setIsOpen(false);
+    setItemObject({
+      id: item.id,
+      item: item.item,
+    });
+    router.refresh();
   }
 
   return (
@@ -54,20 +79,21 @@ export default function EditModal({ item }) {
                     onChange={handleChange}
                   />
                 </div>
-
+                {isError && <ErrorMessage />}
                 <div className="flex justify-center gap-4 mt-4">
                   <button
                     className="btn btn-soft btn-info text-white"
-                    onClick={() => {
-                      editItem(itemObject);
-                      setIsOpen(false);
+                    onClick={(event) => {
+                      event.preventDefault();
+
+                      handleConfirm();
                     }}
                   >
                     Submit
                   </button>
                   <button
                     className="btn btn-soft btn-accent text-white"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => handleCancel()}
                   >
                     Cancel
                   </button>
@@ -80,3 +106,5 @@ export default function EditModal({ item }) {
     </div>
   );
 }
+
+// i need cancel to reset the item object back to waht it was
