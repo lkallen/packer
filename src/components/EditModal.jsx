@@ -28,7 +28,7 @@ export default function EditModal({ item }) {
       <div>
         <button
           onClick={() => setIsOpen(true)}
-          className="btn btn-soft btn-info text-white "
+          className="btn btn-sm btn-soft btn-info text-white "
         >
           edit
         </button>
