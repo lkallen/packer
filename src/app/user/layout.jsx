@@ -5,7 +5,7 @@ import SideNav from "@/components/SideNav";
 export default function UserLayout({ children }) {
   return (
     <div className=" h-screen flex-col">
-      <div className="border-b border-info pb-2 mb-2">
+      <div className="">
         <NavBar />
       </div>
 
@@ -14,12 +14,12 @@ export default function UserLayout({ children }) {
         <SideNav />
         </div>
       
-        <div className="m-12 w-full overflow-scroll ">{children}</div>
+        <div className="m-12 w-full h-3/4 overflow-y-scroll">{children}</div>
       </div>
 
-      <div className="">
+      {/* <div className="">
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 }

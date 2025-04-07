@@ -11,31 +11,30 @@ export default function AdminTable({ tag, allItems }) {
 
   const tableRows = filteredData.map((item) => (
     <tr key={item.id}>
-      <td>{item.item}</td>
-      <td>{item.tags}</td>
-      <td><EditModal item={item}/></td>
-      <td>
+      <td className="w-3/4 ">{item.item}</td>
+      <td className="flex  justify-between">
+        <EditModal item={item} />
+
         <DeleteButton item={item} />
       </td>
     </tr>
   ));
 
-  return (
-    <div>
-      <div className="overflow-x-auto">
-        <table className="table table-xs">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Category</th>
-              <td>crud</td>
-              <td>crud</td>
-            </tr>
-          </thead>
+  const firstLetter = tag.charAt(0).toUpperCase();
+  const remainingLetters = tag.slice(1);
+  const editedTag = firstLetter + remainingLetters;
 
-          <tbody>{tableRows}</tbody>
-        </table>
-      </div>
+  return (
+    <div className="flex  rounded-box border border-info mb-12">
+      <table className="table">
+        <thead>
+          <tr>
+            <th className="text-accent ">Items: {editedTag}</th>
+          </tr>
+        </thead>
+
+        <tbody>{tableRows}</tbody>
+      </table>
     </div>
   );
 }

@@ -20,7 +20,7 @@ export default function Table({ tag, allItems }) {
   const editedTag = firstLetter + remainingLetters;
 
   return (
-    <div className="overflow-x-auto rounded-box border border-info  bg-base-100">
+    <div className=" mb-12 rounded-box border border-info  bg-base-100">
       <table className="table">
         <thead>
           <tr>
