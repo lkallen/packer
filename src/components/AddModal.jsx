@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { addItem } from "@/actions/actions";
 import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { useState } from "react";
+import ErrorMessage from "./ErrorMessage";
 
 export default function AddModal({ tag }) {
   const router = useRouter();
@@ -81,6 +82,7 @@ export default function AddModal({ tag }) {
                   onChange={handleItemChange}
                 />
               </div>
+              {/* {isError && <ErrorMessage />} */}
 
               <div className="mt-4">
                 <label htmlFor="tags">Category:</label>
@@ -95,9 +97,13 @@ export default function AddModal({ tag }) {
               </div>
 
               <div className="flex justify-center gap-4 mt-4">
+                {/* change to handle confirm log
+                add prevent default */}
                 <button
                   className="btn btn-soft btn-info text-white"
-                  onClick={() => handleSubmit()}
+                  onClick={(event) => {
+                    handleSubmit();
+                  }}
                 >
                   Submit
                 </button>

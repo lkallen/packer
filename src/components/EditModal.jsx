@@ -107,4 +107,3 @@ export default function EditModal({ item }) {
   );
 }
 
-// i need cancel to reset the item object back to waht it was
