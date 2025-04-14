@@ -9,6 +9,8 @@
 - only show arrow when need to scroll??
 
 
+- generate guest list button - disable edit/delete except for these
+
 
 extra:
 - on add modal - make consistent with required alert for edit item
