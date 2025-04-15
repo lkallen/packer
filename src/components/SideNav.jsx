@@ -27,7 +27,7 @@ export default function SideNav() {
           href={`/user/${tag}`}
           className={`${
             pathname === `/user/${tag}`
-              ? "btn btn-outline btn-info text-accent"
+              ? "btn btn-outline btn-info text-accent hover:text-white"
               : "btn btn-soft btn-accent text-white "
           }`}
         >
