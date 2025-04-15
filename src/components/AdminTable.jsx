@@ -43,21 +43,21 @@ export default function AdminTable({ tag, allItems }) {
 
 
 
-            <th>
+            <tr>
 
-              <div className="text-accent">Items: {editedTag}</div>
+              <td className="text-accent">Items: {editedTag}</td>
               {isDisabled && (
-                <div className="p-2 text-white font-medium  justify-self-end">
+                <td className="p-2 text-white font-medium  justify-self-end">
                   Note: Guest users can only edit/delete guest items
-                </div>
+                </td>
               )}
               {!isDisabled && (
-                <div className="justify-self-center">
+                <td className="justify-self-center">
                   <GuestLIstButton />
-                </div>
+                </td>
               )}
 
-            </th>
+            </tr>
          
         </thead>
 
