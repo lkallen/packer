@@ -34,9 +34,6 @@ yarn-error.log*
 .env*
 
 
-# todo
-/todo.md
-todo.md
 
 # vercel
 .vercel
