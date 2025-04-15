@@ -39,11 +39,11 @@ export default function AdminTable({ tag, allItems }) {
       <table className="table">
         <thead>
           <tr>
-            <th className="text-accent flex justify-between">
-              <div>Items: {editedTag}</div>
+            <th className="text-accent">
+              <div className="">Items: {editedTag}</div>
               {isDisabled && (
-                <div className="text-white font-medium">
-                  Note: Guests can only edit/delete guest items
+                <div className="text-white font-medium  justify-self-center">
+                  Note: Guest users can only edit/delete guest items
                 </div>
               )}
             </th>
