@@ -5,7 +5,7 @@ import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
 
-export default function EditModal({ item }) {
+export default function EditModal({ item, isDisabled }) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -52,7 +52,10 @@ export default function EditModal({ item }) {
 
       <div>
         <button
+        
+        disabled={isDisabled && true}
           onClick={() => setIsOpen(true)}
+
           className="btn btn-sm btn-soft btn-info text-white "
         >
           edit

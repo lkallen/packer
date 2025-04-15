@@ -7,6 +7,7 @@ export default function SideNav() {
   const pathname = usePathname();
 
   const tags = [
+    "guest",
     "clothing",
     "toiletries",
     "medications",

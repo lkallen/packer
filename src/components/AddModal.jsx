@@ -12,7 +12,7 @@ export default function AddModal({ tag }) {
 
   const [isOpen, setIsOpen] = useState(false);
   const [itemData, setItemData] = useState({
-    tags: "clothing",
+    tags: "guest",
   });
 
   function handleItemChange(event) {
@@ -25,6 +25,7 @@ export default function AddModal({ tag }) {
   }
 
   const tags = [
+    "guest",
     "clothing",
     "toiletries",
     "medications",
@@ -87,7 +88,7 @@ export default function AddModal({ tag }) {
               <div className="mt-4">
                 <label htmlFor="tags">Category:</label>
                 <select
-                  defaultValue="clothing"
+                  defaultValue="guest"
                   className="select border border-info"
                   onChange={(event) => handleTagChange(event.target.value)}
                 >

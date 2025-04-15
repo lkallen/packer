@@ -6,6 +6,7 @@ export default function AdminTabs() {
   const pathname = usePathname();
 
   const tags = [
+    "guest",
     "clothing",
     "toiletries",
     "medications",
