@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import DeleteButton from "./DeleteButton";
 import EditModal from "./EditModal";
+import GuestLIstButton from "./GuestLIstButton";
 
 export default function AdminTable({ tag, allItems }) {
   const [filteredItems, setFilteredItems] = useState([]);
@@ -37,20 +38,32 @@ export default function AdminTable({ tag, allItems }) {
   return (
     <div className="flex  rounded-box border border-info mb-12">
       <table className="table">
-        <thead>
-          <tr>
-            <th className="text-accent">
-              <div className="">Items: {editedTag}</div>
+        <thead className="">
+    
+
+
+
+            <th>
+
+              <div className="text-accent">Items: {editedTag}</div>
               {isDisabled && (
-                <div className="text-white font-medium  justify-self-center">
+                <div className="p-2 text-white font-medium  justify-self-end">
                   Note: Guest users can only edit/delete guest items
                 </div>
               )}
+              {!isDisabled && (
+                <div className="justify-self-center">
+                  <GuestLIstButton />
+                </div>
+              )}
+
             </th>
-          </tr>
+         
         </thead>
 
-        <tbody>{tableRows}</tbody>
+        <tbody>
+          {tableRows}
+          </tbody>
       </table>
     </div>
   );
