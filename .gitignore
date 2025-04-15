@@ -36,6 +36,7 @@ yarn-error.log*
 
 # todo
 /todo.md
+todo.md
 
 # vercel
 .vercel
