@@ -26,7 +26,7 @@ export default function AdminTabs() {
           href={`/admin/${tag}`}
           className={`${
             pathname === `/admin/${tag}`
-              ? "btn btn-outline btn-info text-accent"
+              ? "btn btn-outline btn-info text-accent hover:text-white"
               : "btn btn-soft btn-accent text-white "
           }`}
         >
